@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+
+    .buttons {
+        width: 300px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            outline: none;
+        }
+
+        #reset {
+            margin-left: 92px;
+            margin-top: -82px;
+            cursor: pointer;
+        }
+
+        #startStop {
+            margin-left: 44px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    }
+
+    .stopwatch {
+        width: 300px;
+        height: 300px;
+        border: 3px solid black;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+        background: #5E5A5E;
+        box-shadow:0px 0px 0px 10px #1A74E4 inset;
+    }
+
+    .stopwatch::before {
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        box-shadow: inset -22px 10px 0 3px rgba(0,0,0,.2);
+    }
+}
+
+// Btns styles
+
+#reset {
+    border: none;
+    width: 50px;
+    height: 30px;
+    background: #ADA9AD;
+    border-radius: 5px;
+}
+
+#reset::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 23px;
+    transform: translateY(13px);
+    background: #ADA9AD;
+}
+
+#reset:active {
+    transform: translateY(4px);
+}
+
+#reset:active::after {
+    height: 15px;
+}
+
+#startStop {
+    height: 25px;
+    width: 50px;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    background: #EB5842;
+    transform: rotate(37deg);
+}
+
+#startStop:active {
+    transform: translateY(1px) rotate(37deg);
+}
+
+#display {
+    width: 230px;
+    height: 80px;
+    border-radius: 5px;
+    color: #fff;
+    background: #11120A;
+    font-size: 3em;
+    display: grid;
+    place-content: center;
+}
+
+@keyframes move {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
+}
